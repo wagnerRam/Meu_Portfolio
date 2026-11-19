@@ -81,13 +81,12 @@ export default function Home() {
             <br />
             ideias em <span>soluções</span>
             <br />
-            com tecnologia.
+            reais.
           </h1>
 
           <p className="hero-description">
-            Estudante de Análise e Desenvolvimento de Sistemas, com experiência
-            em tecnologia e automação industrial e foco no desenvolvimento
-            de software.
+            Desenvolvedor web com experiência em tecnologia e foco na criação de
+            sites, aplicações e soluções digitais.
           </p>
 
           <div className="hero-actions">
@@ -161,23 +160,19 @@ export default function Home() {
         <div className="section-heading">
           <p className="eyebrow">01 — SOBRE MIM</p>
           <h2>
-            Tecnologia com propósito.
+            Ideias não foram feitas para ficar no papel.
             <br />
-            <span>Aprendizado na prática.</span>
+            <span>Foram feitas para acontecer.</span>
           </h2>
         </div>
 
         <div className="about-content">
           <p>
-            Sou estudante de Análise e Desenvolvimento de Sistemas e atuo
-            profissionalmente em um ambiente ligado à tecnologia e automação
-            industrial.
+            Sou desenvolvedor web e acredito que a tecnologia tem valor quando resolve problemas e abre novas possibilidades.
           </p>
           <p>
-            Tenho interesse em desenvolvimento de software, integração de
-            sistemas e soluções que resolvam problemas reais. Nos meus projetos
-            pessoais, busco transformar o conhecimento adquirido em aplicações
-            práticas e evoluir continuamente como desenvolvedor.
+            Meu trabalho é transformar necessidades em soluções digitais, criando sites e
+            aplicações para web, desktop e mobile, sempre com atenção aos detalhes e à experiência de quem utiliza.
           </p>
 
           <div className="about-facts">
@@ -201,13 +196,13 @@ export default function Home() {
         <div className="section-heading">
           <p className="eyebrow">02 — HABILIDADES</p>
           <h2>
-            Ferramentas que uso
+            Meu ambiente
             <br />
-            <span>e venho desenvolvendo.</span>
+            <span>de desenvolvimento.</span>
           </h2>
           <p className="section-description">
-            Tecnologias estudadas ou utilizadas em projetos pessoais e
-            atividades profissionais. Meu nível varia conforme a ferramenta.
+            Cada tecnologia representa uma possibilidade de criar, experimentar e 
+            encontrar novas maneiras de desenvolver soluções.
           </p>
         </div>
 
@@ -229,9 +224,9 @@ export default function Home() {
           <div className="section-heading">
             <p className="eyebrow">03 — PROJETOS SELECIONADOS</p>
             <h2>
-              Ideias que estão
+              Onde ideias
               <br />
-              <span>saindo do papel.</span>
+              <span>encontram tecnologia.</span>
             </h2>
           </div>
           <a
