@@ -1,43 +1,76 @@
+import Image from "next/image";
 import ThemeToggle from "./ThemeToggle";
-const projects = [
+import ProjectPreview from "./ProjectPreview";
+
+interface Project {
+  number: string;
+  name: string;
+  category: string;
+  description: string;
+  technologies: string[];
+  status: string;
+  previewUrl?: string;
+}
+
+const projects: Project[] = [
   {
     number: "01",
-    name: "ThawBlack",
-    category: "DESENVOLVIMENTO WEB",
+    name: "ThawBlack — Site e Agendamento",
+    category: "WEB · SITE E AGENDAMENTO",
     description:
-      "Plataforma web para uma barbearia, com foco em agendamento de serviços, experiência do cliente e organização profissional.",
-    technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
+      "Site de uma barbearia com apresentação dos serviços e fluxo de agendamento para os clientes.",
+    technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Supabase"],
     status: "Em desenvolvimento",
   },
   {
     number: "02",
+    name: "ThawBlack — Dashboard",
+    category: "WEB · PAINEL ADMINISTRATIVO",
+    description:
+      "Painel administrativo da barbearia, pensado para reunir a rotina de gestão em um só lugar, com acompanhamento de agendamentos, serviços, profissionais e informações financeiras.",
+    technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
+    status: "Em desenvolvimento",
+  },
+  {
+    number: "03",
+    name: "Odonto Prime",
+    category: "WEB · LANDING PAGE",
+    description:
+      "Site demonstrativo de uma clínica odontológica, com apresentação dos tratamentos, informações da clínica e canais de contato para novos pacientes.",
+    technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
+    status: "Concluído",
+    previewUrl: "https://odonto-prime.wagner19ramos.workers.dev",
+  },
+  {
+    number: "04",
     name: "Election Pipeline",
     category: "PYTHON · DADOS",
     description:
-      "Projeto para processamento de dados eleitorais do TSE, com foco em automação, organização dos dados e testes automatizados.",
+      "Projeto em Python para organizar e processar dados eleitorais do TSE, com etapas automatizadas e testes para conferir o processamento.",
     technologies: ["Python", "Pytest", "API de dados"],
     status: "Projeto pessoal",
   },
   {
-    number: "03",
+    number: "05",
     name: "Automação industrial",
-    category: "TECNOLOGIA · INTEGRAÇÃO",
+    category: "SOFTWARE · AUTOMAÇÃO E INTEGRAÇÃO",
     description:
-      "Experiência profissional no desenvolvimento de soluções e bibliotecas para integração com equipamentos e sistemas de automação.",
+      "Desenvolvimento de soluções para comunicação com equipamentos industriais, incluindo bibliotecas em C e integração com sistemas de automação.",
     technologies: ["C", "Python", "Integração de sistemas"],
     status: "Experiência profissional",
   },
 ];
 
 const skills = [
-  "Python",
-  "C",
   "JavaScript",
   "TypeScript",
   "React",
   "Next.js",
+  "Python",
+  "C",
   "SQL",
   "Git",
+  "Mobile",
 ];
 
 export default function Home() {
@@ -85,14 +118,16 @@ export default function Home() {
           </h1>
 
           <p className="hero-description">
-            Desenvolvedor web com experiência em tecnologia e foco na criação de
-            sites, aplicações e soluções digitais.
+            Desenvolvedor de Software com foco na criação de soluções digitais para
+            Web, Mobile e sistemas, unindo tecnologia, funcionalidade e
+            experiência do usuário.
           </p>
 
           <div className="hero-actions">
             <a className="button-primary" href="#projetos">
               Conheça meus projetos <span>↘</span>
             </a>
+
             <a
               className="button-secondary"
               href="https://www.linkedin.com/in/wagnercarvalhoramos/"
@@ -124,7 +159,9 @@ export default function Home() {
             </div>
 
             <div className="code-content">
-              <p><span className="code-purple">const</span> developer = {"{"}</p>
+              <p>
+                <span className="code-purple">const</span> developer = {"{"}
+              </p>
               <p className="indent">
                 name: <span className="code-green">"Wagner Ramos"</span>,
               </p>
@@ -145,8 +182,8 @@ export default function Home() {
           </div>
 
           <div className="hero-card-bottom">
-            <span>BASEADO EM PROJETOS REAIS</span>
-            <span>01 / 03</span>
+            <span>PROJETOS E EXPERIMENTAÇÃO</span>
+            <span>01 / 04</span>
           </div>
         </div>
 
@@ -166,27 +203,43 @@ export default function Home() {
           </h2>
         </div>
 
-        <div className="about-content">
-          <p>
-            Sou desenvolvedor web e acredito que a tecnologia tem valor quando resolve problemas e abre novas possibilidades.
-          </p>
-          <p>
-            Meu trabalho é transformar necessidades em soluções digitais, criando sites e
-            aplicações para web, desktop e mobile, sempre com atenção aos detalhes e à experiência de quem utiliza.
-          </p>
+        <div className="about-layout">
+          <div className="about-photo">
+            <Image
+              src="/images/perfil.png"
+              alt="Wagner Ramos — Desenvolvedor de Software"
+              width={420}
+              height={500}
+              priority
+              sizes="(max-width: 768px) 100vw, 420px"
+            />
+          </div>
 
-          <div className="about-facts">
-            <div>
-              <span className="fact-number">01</span>
-              <span>Projetos próprios</span>
-            </div>
-            <div>
-              <span className="fact-number">02</span>
-              <span>Experiência prática</span>
-            </div>
-            <div>
-              <span className="fact-number">03</span>
-              <span>Evolução contínua</span>
+          <div className="about-content">
+            <p>
+              Sou desenvolvedor de software e acredito que a tecnologia tem valor
+              quando resolve problemas e abre novas possibilidades.
+            </p>
+
+            <p>
+              Meu foco é transformar necessidades em soluções digitais, desenvolvendo
+              experiências para Web, Mobile e sistemas. Em cada projeto, valorizo
+              funcionalidade, organização e uma boa experiência para quem utiliza.
+            </p>
+
+            <div className="about-facts">
+              <div>
+                <span className="fact-number">01</span>
+                <span>Projetos próprios</span>
+              </div>
+              <div>
+                <span className="fact-number">02</span>
+                <span>Experiência prática</span>
+              </div>
+              <div>
+                <span className="fact-number">03</span>
+                <span>Evolução contínua</span>
+              </div>
             </div>
           </div>
         </div>
@@ -201,8 +254,8 @@ export default function Home() {
             <span>de desenvolvimento.</span>
           </h2>
           <p className="section-description">
-            Cada tecnologia representa uma possibilidade de criar, experimentar e 
-            encontrar novas maneiras de desenvolver soluções.
+            Estas são as tecnologias e áreas que fazem parte da minha atuação, combinando
+            desenvolvimento Web, Mobile, programação, dados e sistemas.
           </p>
         </div>
 
@@ -229,6 +282,7 @@ export default function Home() {
               <span>encontram tecnologia.</span>
             </h2>
           </div>
+
           <a
             className="text-link"
             href="https://github.com/wagnerRam"
@@ -258,15 +312,23 @@ export default function Home() {
 
               <div className="project-side">
                 <span className="project-status">{project.status}</span>
-                <span className="project-arrow">↗</span>
+                {project.previewUrl ? (
+                  <ProjectPreview
+                    name={project.name}
+                    url={project.previewUrl}
+                    image="/images/odonto-prime-preview.png"
+                  />
+                ) : (
+                  <span className="project-arrow">↗</span>
+                )}
               </div>
             </article>
           ))}
         </div>
 
         <p className="projects-note">
-          Os projetos são apresentados de acordo com seu estágio atual de
-          desenvolvimento.
+          Os projetos demonstram diferentes frentes de desenvolvimento e aplicação
+          prática de tecnologia.
         </p>
       </section>
 
@@ -277,9 +339,10 @@ export default function Home() {
           <br />
           algo <span>interessante?</span>
         </h2>
+
         <p className="contact-description">
-          Conheça meus projetos, acompanhe minha evolução e entre em contato
-          pelos meus perfis profissionais.
+          Desenvolvimento Web, Mobile e sistemas: conheça meus projetos, acompanhe
+          minha evolução e entre em contato pelos meus perfis profissionais.
         </p>
 
         <div className="hero-actions">
